@@ -6,6 +6,16 @@
     src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf) format("truetype");
 }
 
+:root {
+    /* Color Lists */
+    --grey-900: hsl(215, 31%, 21%);
+    --blue-600: hsl(227, 92%, 58%);
+    --grey-700: hsl(215, 17%, 45%);
+    --grey-300: hsl(200, 24%, 88%);
+    --white-900: hsl(0, 0%, 100%);
+    --background-gradient: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+}
+
 /* Universal Styling */
 *,
 *::before,
