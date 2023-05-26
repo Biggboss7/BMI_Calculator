@@ -33,4 +33,32 @@ html {
 body {
     min-height: 100vh;
     max-height: 375px;
+    padding-left: 1.5rem;
+}
+
+p {
+    color: var(--grey-700);
+    line-height: 1.5;
+}
+
+/* Utilities Style */
+.page__heading {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 2.1875rem;
+}
+
+.page-header__container {
+    width: 61.125rem;
+    padding: 4.6875rem 18.625rem 12.5rem 7.25rem;
+    background: var(--background-gradient);
+    border-radius: 0 0 2.1875rem 2.1875rem;
+}
+
+.page-header__content {
+    width: 35.25rem;
+}
+
+.company__logo {
+    margin-bottom: 7.9375rem;
 }
