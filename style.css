@@ -42,14 +42,23 @@ p {
 }
 
 /* Utilities Style */
-.page__heading {
-    font-size: 4rem;
+.page__heading,
+.section__heading {
     font-weight: 600;
     margin-bottom: 2.1875rem;
 }
 
+.page__heading {
+    font-size: 4rem;
+}
+
+.section__heading {
+    font-size: 3rem;
+}
+
 .page-header__container {
     width: 61.125rem;
+    margin-bottom: 3.8rem;
     padding: 4.6875rem 18.625rem 12.5rem 7.25rem;
     background: var(--background-gradient);
     border-radius: 0 0 2.1875rem 2.1875rem;
@@ -61,4 +70,23 @@ p {
 
 .company__logo {
     margin-bottom: 7.9375rem;
+}
+
+.result-explanation__container {
+    width: 76rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+}
+
+.brand-ambassador {
+    width: 35.25rem;
+}
+
+.result-explanation__content {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
