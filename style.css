@@ -33,7 +33,7 @@ html {
 body {
     min-height: 100vh;
     max-height: 375px;
-    padding-left: 1.5rem;
+    padding: 0 1.5rem;
 }
 
 p {
@@ -54,6 +54,12 @@ p {
 
 .section__heading {
     font-size: 3rem;
+}
+
+.card__heading {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .page-header__container {
@@ -89,4 +95,19 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: end;
+}
+
+
+.good-habit__container {
+    margin-bottom: 7.5rem;
+    padding: 4.5rem 7.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 2rem;
+    background: var(--background-gradient);
+    border-radius: 2.1875rem;
+}
+
+.good-habit__logo {
+    margin-bottom: 2.8125rem;
 }
