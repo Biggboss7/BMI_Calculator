@@ -1,0 +1,26 @@
+/* Font Style */
+@font-face {
+    font-family: "InterVariable";
+    font-display: fallback;
+    font-weight: 100 900;
+    src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf) format("truetype");
+}
+
+/* Universal Styling */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "InterVariable";
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    max-height: 375px;
+}
