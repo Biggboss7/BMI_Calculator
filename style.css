@@ -45,6 +45,10 @@ h6 {
     font-weight: 600;
 }
 
+h3 {
+    font-size: 1.25rem;
+}
+
 p {
     color: var(--grey-700);
     line-height: 1.5;
@@ -118,4 +122,54 @@ p {
 
 .good-habit__logo {
     margin-bottom: 2.8125rem;
+}
+
+.bmi-limitations__container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+}
+
+.card-limitations {
+    padding: 32px;
+    background-color: var(--white-900);
+    border-radius: 16px;
+    box-shadow: 8px 10px 25px var(--grey-300);
+}
+
+.card-limitations__header {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.limitations-logo {
+    margin-right: 1rem;
+}
+
+.bmi-limitations {
+    grid-column: 1 / span 6;
+}
+
+.gender {
+    grid-column: 8 / span 4;
+}
+
+.age {
+    grid-area: 2 / 5 / span 1 / span 4;
+}
+
+.muscle {
+    grid-area: 2 / 9 / span 1 / span 4;
+}
+
+.pregnancy {
+    grid-area: 3 / 3 / span 1 / span 4;
+}
+
+.race {
+    position: static;
+    grid-area: 3 / 7 / span 1 / span 4;
 }
