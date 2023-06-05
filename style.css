@@ -32,8 +32,8 @@ html {
 
 body {
     min-height: 100vh;
-    max-height: 375px;
-    padding: 0 1.5rem;
+    min-width: 375px;
+    padding: 0 1.5rem 7.5rem 1.5rem;
 }
 
 h1,
