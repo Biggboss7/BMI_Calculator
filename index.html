@@ -33,6 +33,35 @@
                 well-being.
             </p>
         </article>
+        <form class="users-info">
+            <h2 class="card__heading">Enter your details below</h2>
+            <div class="fieldset-unit">
+                <label for="metric">
+                    <input id="metric" type="radio" name="unit" value="metric" checked>
+                    Metric
+                </label>
+                <label for="imperial">
+                    <input id="imperial" type="radio" name="unit" value="imperial">
+                    Imperial
+                </label>
+            </div>
+            <div class="fieldset-details">
+                <label for="height">
+                    Height
+                    <input id="height" type="number" name="height" value="0" placeholder="0">
+                </label>
+                <label for="weight">
+                    Weight
+                    <input id="weight" type="number" name="weight" value="0" placeholder="0">
+                </label>
+            </div>
+            <div class="result-summary__container">
+                <p class="result__content">Welcome!</p>
+                <p class="summary__content">
+                    Enter your height and weight and you'll see your BMI result here
+                </p>
+            </div>
+        </form>
     </header>
     <div class="result-explanation__container">
         <img class="brand-ambassador" src="./assets/images/image-man-eating.webp"
