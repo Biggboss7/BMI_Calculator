@@ -46,20 +46,30 @@
                 </label>
             </div>
             <div class="fieldset-details">
-                <label for="height">
+                <label for="heightInCM">
                     Height
-                    <input id="height" type="number" name="height" value="0" placeholder="0">
+                    <input id="heightInCM" type="number" name="height" value="" placeholder="0">
                 </label>
-                <label for="weight">
+                <label for="weightInKG">
                     Weight
-                    <input id="weight" type="number" name="weight" value="0" placeholder="0">
+                    <input id="weightInKG" type="number" name="weight" value="" placeholder="0">
                 </label>
             </div>
             <div class="result-summary__container">
-                <p class="result__content">Welcome!</p>
-                <p class="summary__content">
-                    Enter your height and weight and you'll see your BMI result here
-                </p>
+                <div class="result__content">
+                    <h3 class="card__heading">Welcome!</h3>
+                    <span id="bmi-score" class="page__heading"></span>
+                </div>
+                <div class="summary__content">
+                    <p>
+                        Enter your height and weight and you'll see your BMI result here
+                    </p>
+                    <!-- <p id="bmi-summary">
+                        Your BMI suggests you're a <strong id="bmi-status"></strong> weight. Your ideal weight is
+                        between
+                        <strong id="min-weight"></strong> - <strong id="max-weight"></strong>.
+                    </p> -->
+                </div>
             </div>
         </form>
     </header>
