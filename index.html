@@ -46,14 +46,33 @@
                 </label>
             </div>
             <div class="fieldset-details">
-                <label for="heightInCM">
-                    Height
-                    <input id="heightInCM" type="number" name="height" value="" placeholder="0">
-                </label>
-                <label for="weightInKG">
-                    Weight
-                    <input id="weightInKG" type="number" name="weight" value="" placeholder="0">
-                </label>
+                <div class="fieldset-details__metric">
+                    <label for="heightInCM">
+                        Height
+                        <input id="heightInCM" type="number" name="height(cm)" value="" placeholder="0">
+                    </label>
+                    <label for="weightInKG">
+                        Weight
+                        <input id="weightInKG" type="number" name="weight(kg)" value="" placeholder="0">
+                    </label>
+                </div>
+
+                <div class="fieldset-details__imperial">
+                    <label for="heightInFeet">
+                        Height
+                        <input id="heightInFeet" type="number" name="height(ft)" value="" placeholder="0">
+                    </label>
+                    <label for="heightInInch">
+                        <input id="heightInInch" type="number" name="height(in)" value="" placeholder="0">
+                    </label>
+                    <label for="weightInSt">
+                        Weight
+                        <input id="weightInSt" type="number" name="weight(st)" value="" placeholder="0">
+                    </label>
+                    <label for="weightInLbs">
+                        <input id="weightInLbs" type="number" name="weight(lbs)" value="" placeholder="0">
+                    </label>
+                </div>
             </div>
             <div class="result-summary__container">
                 <div class="result__content">

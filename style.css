@@ -238,22 +238,29 @@ input[type="radio"]:checked:before {
 }
 
 /* ---------------------------------------- */
-.fieldset-details {
+.fieldset-details__metric,
+.fieldset-details__imperial {
+    margin-bottom: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 2rem;
+    row-gap: 1.5rem;
 }
 
 .fieldset-details label {
     position: relative;
-    display: grid;
     font-size: .875rem;
+}
+
+label[for="heightInInch"],
+label[for="weightInLbs"] {
+    display: flex;
+    align-items: end;
 }
 
 .fieldset-details label::after {
     position: absolute;
-    top: 47%;
-    left: 68%;
+    top: 48%;
+    right: 22%;
     color: var(--blue-600);
     font-weight: 600;
     font-size: 1.5rem;
@@ -288,6 +295,23 @@ label[for="heightInCM"]::after {
 label[for="weightInKG"]::after {
     content: "kg";
 }
+
+label[for="heightInFeet"]::after {
+    content: "ft";
+}
+
+label[for="heightInInch"]::after {
+    content: "in";
+}
+
+label[for="weightInSt"]::after {
+    content: "st";
+}
+
+label[for="weightInLbs"]::after {
+    content: "lbs";
+}
+
 
 /* -------------------------------------- */
 
