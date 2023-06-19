@@ -241,7 +241,7 @@ input[type="radio"]:checked:before {
 .fieldset-details__metric,
 .fieldset-details__imperial {
     margin-bottom: 2rem;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     row-gap: 1.5rem;
 }
@@ -314,6 +314,17 @@ label[for="weightInLbs"]::after {
 
 
 /* -------------------------------------- */
+.metric .fieldset-details__metric {
+    display: grid;
+}
+
+.imperial .fieldset-details__imperial {
+    display: grid;
+}
+
+.imperial .fieldset-details__metric {
+    display: none;
+}
 
 .result-summary__container {
     padding: 2rem;

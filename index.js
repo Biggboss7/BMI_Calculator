@@ -1,7 +1,9 @@
+const bmiForm = document.querySelector(".users-info");
 const resultSummaryContainerEl = document.querySelector(".result-summary__container");
 const usersHeightCMEl = document.querySelector("#heightInCM");
 const usersWeightKGEl = document.querySelector("#weightInKG");
 const numberInputList = document.querySelectorAll("input[type='number']");
+const radioInputList = document.querySelectorAll("input[type='radio']");
 const usersBMIScoreEl = document.querySelector("#bmi-score");
 const usersBMISummary = document.querySelector("#bmi-summary");
 const minBMI = 18.5;
@@ -48,7 +50,15 @@ for (const element of numberInputList) {
     );
 };
 
-
+for (const radio of radioInputList) {
+    radio.addEventListener("click",
+        function (e) {
+            const lastClass = bmiForm.classList[1];
+            const chosenRadio = e.target.id;
+            bmiForm.classList.remove(lastClass);
+            bmiForm.classList.add(chosenRadio);
+        })
+}
 
 
 
