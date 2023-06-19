@@ -298,10 +298,40 @@ label[for="weightInKG"]::after {
 }
 
 .result-summary__container p,
-.result-summary__container h3 {
+.result-summary__container h3,
+.result-summary__container strong {
     color: var(--white-900);
 }
 
 .result-summary__container p {
     font-size: .875rem;
+}
+
+.summary__content {
+    display: flex;
+    align-items: center;
+}
+
+#bmi-summary {
+    display: none;
+}
+
+/* When Input is Filled */
+.activated {
+    display: flex;
+    justify-content: space-between;
+}
+
+.activated .card__heading {
+    margin-bottom: .2rem;
+    font-size: 1rem;
+}
+
+.activated #description {
+    display: none;
+}
+
+.activated #bmi-summary {
+    width: 200px;
+    display: block;
 }
