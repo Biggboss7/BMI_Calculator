@@ -100,7 +100,7 @@ p {
 }
 
 .brand-ambassador {
-    width: 35.25rem;
+    width: 45%;
 }
 
 .result-explanation__content {
@@ -282,6 +282,7 @@ input[type="number"] {
     height: 69px;
     padding: 1.25rem 1.5rem;
     margin-top: .5rem;
+    display: block;
     border: 1px solid var(--grey-300);
     border-radius: 12px;
     font-size: 1.5rem;
@@ -377,4 +378,31 @@ label[for="weightInLbs"]::after {
 .activated #bmi-summary {
     width: 200px;
     display: block;
+}
+
+@media (max-width: 1300px) {
+    body {
+        padding: 0;
+    }
+
+    .page-header__container {
+        width: 100%;
+        margin-bottom: 26rem;
+        padding-right: 0;
+    }
+
+    .result-explanation__container {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .users-info {
+        left: 115px;
+        top: 75%;
+        transform: translate(0);
+    }
+
+    .company__logo {
+        margin-bottom: 2.5rem;
+    }
 }
