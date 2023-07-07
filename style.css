@@ -387,7 +387,7 @@ label[for="weightInLbs"]::after {
 
     .page-header__container {
         width: 100%;
-        margin-bottom: 26rem;
+        margin-bottom: 23rem;
         padding-right: 0;
     }
 
@@ -404,5 +404,91 @@ label[for="weightInLbs"]::after {
 
     .company__logo {
         margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 960px) {
+    .page__heading {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section__heading {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .page-header__container {
+        height: 39.875rem;
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .page-header__content {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .company__logo {
+        display: block;
+    }
+
+    .users-info {
+        width: 37.9rem;
+        position: static;
+    }
+
+    .company__logo,
+    .users-info {
+        margin: 2rem auto;
+    }
+
+    .good-habit__container {
+        margin-bottom: 2rem;
+        padding-left: 3.25rem;
+        padding-right: 3.25rem;
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+
+    .good-habit__card {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .good-habit__logo {
+        margin-bottom: 0;
+    }
+
+    .bmi-limitations__container {
+        padding: 2.4rem;
+    }
+
+    .bmi-limitations {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .gender {
+        grid-area: 2 / 1 / span 1 / span 6;
+    }
+
+    .age {
+        grid-area: 2 / 7 / span 1 / span 6;
+    }
+
+    .muscle {
+        grid-area: 3 / 1 / span 1 / span 6;
+    }
+
+    .pregnancy {
+        grid-area: 3 / 7 / span 1 / span 6;
+    }
+
+    .race {
+        position: static;
+        grid-area: 4 / 4 / span 1 / span 6;
     }
 }
