@@ -84,7 +84,7 @@ p {
 }
 
 .page-header__content {
-    width: 35.25rem;
+    width: 90%;
 }
 
 .company__logo {
@@ -405,6 +405,15 @@ label[for="weightInLbs"]::after {
     .company__logo {
         margin-bottom: 2.5rem;
     }
+
+    .fieldset-unit label {
+        margin-right: 0;
+    }
+
+    label[for="imperial"] {
+        position: relative;
+        left: 29%;
+    }
 }
 
 @media (max-width: 960px) {
@@ -434,8 +443,12 @@ label[for="weightInLbs"]::after {
     }
 
     .users-info {
-        width: 37.9rem;
+        width: 90%;
         position: static;
+    }
+
+    input[type="number"] {
+        width: 90%;
     }
 
     .company__logo,
