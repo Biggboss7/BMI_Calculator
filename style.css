@@ -77,7 +77,7 @@ p {
 .page-header__container {
     width: 61.125rem;
     position: relative;
-    margin-bottom: 3.8rem;
+    /* margin-bottom: 3.8rem; */
     padding: 4.6875rem 18.625rem 12.5rem 7.25rem;
     background: var(--background-gradient);
     border-radius: 0 0 2.1875rem 2.1875rem;
@@ -387,7 +387,7 @@ label[for="weightInLbs"]::after {
 
     .page-header__container {
         width: 100%;
-        margin-bottom: 23rem;
+        margin-bottom: 26rem;
         padding-right: 0;
     }
 
@@ -428,9 +428,8 @@ label[for="weightInLbs"]::after {
     }
 
     .page-header__container {
-        height: 39.875rem;
-        padding-top: 2rem;
-        padding-left: 0;
+        margin-bottom: 0;
+        padding: 2rem 0 0 0;
     }
 
     .page-header__content {
@@ -510,6 +509,7 @@ label[for="weightInLbs"]::after {
         flex-direction: column;
         align-items: center;
         padding: 0 1rem;
+        margin-bottom: 3rem;
     }
 
     .brand-ambassador {
@@ -556,5 +556,19 @@ label[for="weightInLbs"]::after {
 
     .race {
         grid-area: 6 / 1 / span 1 / -1;
+    }
+}
+
+@media (max-width: 510px) {
+    .activated {
+        flex-direction: column;
+    }
+
+    .result-summary__container {
+        border-radius: 1rem;
+    }
+
+    .result__content {
+        margin-bottom: 1rem;
     }
 }
