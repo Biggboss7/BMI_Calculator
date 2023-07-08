@@ -501,7 +501,6 @@ label[for="weightInLbs"]::after {
     }
 
     .race {
-        position: static;
         grid-area: 4 / 4 / span 1 / span 6;
     }
 }
@@ -521,5 +520,41 @@ label[for="weightInLbs"]::after {
     .result-explanation__content {
         width: 100%;
         text-align: center;
+    }
+}
+
+@media (max-width: 610px) {
+
+    .good-habit__card {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .good-habit__logo {
+        margin-bottom: 2rem;
+    }
+
+    .bmi-limitations__container {
+        padding: 1rem;
+    }
+
+    .gender {
+        grid-area: 2 / 1 / span 1 / -1;
+    }
+
+    .age {
+        grid-area: 3 / 1 / span 1 / -1;
+    }
+
+    .muscle {
+        grid-area: 4 / 1 / span 1 / -1;
+    }
+
+    .pregnancy {
+        grid-area: 5 / 1 / span 1 / -1;
+    }
+
+    .race {
+        grid-area: 6 / 1 / span 1 / -1;
     }
 }
