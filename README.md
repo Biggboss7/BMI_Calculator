@@ -25,15 +25,16 @@ Users should be able to:
 ### Screenshot
 
 - Desktop Preview \
-![desktop-preview](./desktoppreview.png)
+  ![desktop-preview](./desktoppreview.png)
 
 - Mobile Preview \
-![mobile-preview](./mobilepreview.png)
+  ![mobile-preview](./mobilepreview.png)
 
 ### Links
 
 - Solution URL: [solution](https://github.com/Biggboss7/BMI_Calculator)
-- Live Site URL: [live site](https://master--rad-dragon-2b065d.netlify.app/)
+- Live Site URL: [live site](https://bmi-calculator-bigboss.netlify.app/)
 
 ## Author
+
 - Github - (https://github.com/Biggboss7/)
