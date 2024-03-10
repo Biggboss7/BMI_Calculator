@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution](https://github.com/Biggboss7/BMI_Calculator)
-- Live Site URL: [live site](https://bmi-calculator-bigboss.netlify.app/s)
+- Live Site URL: [https://bmi-calculator-bigboss.netlify.app/](https://bmi-calculator-bigboss.netlify.app/)
 
 ## Author
 
