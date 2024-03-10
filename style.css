@@ -1,39 +1,44 @@
 /* Font Style */
 @font-face {
-    font-family: "InterVariable";
-    font-display: fallback;
-    font-weight: 100 900;
-    src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf) format("truetype");
+  font-family: "InterVariable";
+  font-display: fallback;
+  font-weight: 100 900;
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
 }
 
 :root {
-    /* Color Lists */
-    --grey-900: hsl(215, 31%, 21%);
-    --blue-600: hsl(227, 92%, 58%);
-    --grey-700: hsl(215, 17%, 45%);
-    --grey-300: hsl(200, 24%, 88%);
-    --white-900: hsl(0, 0%, 100%);
-    --background-gradient: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  /* Color Lists */
+  --grey-900: hsl(215, 31%, 21%);
+  --blue-600: hsl(227, 92%, 58%);
+  --grey-700: hsl(215, 17%, 45%);
+  --grey-300: hsl(200, 24%, 88%);
+  --white-900: hsl(0, 0%, 100%);
+  --background-gradient: linear-gradient(
+    290.1deg,
+    #d6e6fe 0%,
+    rgba(214, 252, 254, 0) 100%
+  );
 }
 
 /* Universal Styling */
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: "InterVariable";
-    font-size: 16px;
+  font-family: "InterVariable";
+  font-size: 16px;
 }
 
 body {
-    min-height: 100vh;
-    min-width: 375px;
-    padding: 0 1.5rem 7.5rem 1.5rem;
+  min-height: 100vh;
+  min-width: 375px;
+  padding: 0 1.5rem 7.5rem 1.5rem;
 }
 
 h1,
@@ -42,533 +47,530 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 h3 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 p {
-    color: var(--grey-700);
-    line-height: 1.5;
+  color: var(--grey-700);
+  line-height: 1.5;
 }
 
 /* Utilities Style */
 .page__heading,
 .section__heading {
-    margin-bottom: 2.1875rem;
+  margin-bottom: 2.1875rem;
 }
 
 .page__heading {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 .section__heading {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .card__heading {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .page-header__container {
-    width: 61.125rem;
-    position: relative;
-    /* margin-bottom: 3.8rem; */
-    padding: 4.6875rem 18.625rem 12.5rem 7.25rem;
-    background: var(--background-gradient);
-    border-radius: 0 0 2.1875rem 2.1875rem;
+  width: 61.125rem;
+  position: relative;
+  /* margin-bottom: 3.8rem; */
+  padding: 4.6875rem 18.625rem 12.5rem 7.25rem;
+  background: var(--background-gradient);
+  border-radius: 0 0 2.1875rem 2.1875rem;
 }
 
 .page-header__content {
-    width: 90%;
+  width: 90%;
 }
 
 .company__logo {
-    margin-bottom: 7.9375rem;
+  margin-bottom: 7.9375rem;
 }
 
 .result-explanation__container {
-    width: 76rem;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6rem;
+  width: 76rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
 }
 
 .brand-ambassador {
-    width: 45%;
+  width: 45%;
 }
 
 .result-explanation__content {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
-
 .good-habit__container {
-    margin-bottom: 7.5rem;
-    padding: 4.5rem 7.25rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem 2rem;
-    background: var(--background-gradient);
-    border-radius: 2.1875rem;
+  margin-bottom: 7.5rem;
+  padding: 4.5rem 7.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  background: var(--background-gradient);
+  border-radius: 2.1875rem;
 }
 
 .good-habit__logo {
-    margin-bottom: 2.8125rem;
+  margin-bottom: 2.8125rem;
 }
 
 .bmi-limitations__container {
-    max-width: 1160px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
 }
 
 .card-limitations {
-    padding: 32px;
-    background-color: var(--white-900);
-    border-radius: 16px;
-    box-shadow: 8px 10px 25px var(--grey-300);
+  padding: 32px;
+  background-color: var(--white-900);
+  border-radius: 16px;
+  box-shadow: 8px 10px 25px var(--grey-300);
 }
 
 .card-limitations__header {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .limitations-logo {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .bmi-limitations {
-    grid-column: 1 / span 6;
+  grid-column: 1 / span 6;
 }
 
 .gender {
-    grid-column: 8 / span 4;
+  grid-column: 8 / span 4;
 }
 
 .age {
-    grid-area: 2 / 5 / span 1 / span 4;
+  grid-area: 2 / 5 / span 1 / span 4;
 }
 
 .muscle {
-    grid-area: 2 / 9 / span 1 / span 4;
+  grid-area: 2 / 9 / span 1 / span 4;
 }
 
 .pregnancy {
-    grid-area: 3 / 3 / span 1 / span 4;
+  grid-area: 3 / 3 / span 1 / span 4;
 }
 
 .race {
-    position: static;
-    grid-area: 3 / 7 / span 1 / span 4;
+  position: static;
+  grid-area: 3 / 7 / span 1 / span 4;
 }
 
 /* BMI Form Section */
 .users-info {
-    padding: 2rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(35%, -50%);
-    background-color: var(--white-900);
-    border-radius: 1rem;
-    box-shadow: 5px 15px 50px var(--grey-300);
+  padding: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(35%, -50%);
+  background-color: var(--white-900);
+  border-radius: 1rem;
+  box-shadow: 5px 15px 50px var(--grey-300);
 }
 
 .fieldset-unit {
-    display: flex;
-    margin-bottom: 2rem;
+  display: flex;
+  margin-bottom: 2rem;
 }
 
 .fieldset-unit label {
-    margin-right: 10.5rem;
-    display: inline-flex;
-    align-items: center;
-    font-weight: 600;
+  margin-right: 10.5rem;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
 }
 
 input[type="radio"],
 input[type="number"] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input[type="radio"] {
-    appearance: none;
-    width: 31px;
-    height: 31px;
-    display: grid;
-    place-content: center;
-    margin-right: 1.125rem;
-    border: 1px solid var(--grey-300);
-    border-radius: 100%;
+  appearance: none;
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-content: center;
+  margin-right: 1.125rem;
+  border: 1px solid var(--grey-300);
+  border-radius: 100%;
 }
 
 input[type="radio"]:active {
-    border-color: var(--blue-600);
+  border-color: var(--blue-600);
 }
 
 input[type="radio"]:checked {
-    background-color: rgba(52, 95, 246, 0.15);
+  background-color: rgba(52, 95, 246, 0.15);
 }
 
 /* Customize Radio Input */
 input[type="radio"]::before {
-    content: "";
-    width: 15px;
-    height: 15px;
-    background-color: var(--blue-600);
-    border-radius: 100%;
-    transform: scale(0);
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: var(--blue-600);
+  border-radius: 100%;
+  transform: scale(0);
 }
 
 input[type="radio"]:checked:before {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 /* ---------------------------------------- */
 .fieldset-details__metric,
 .fieldset-details__imperial {
-    margin-bottom: 2rem;
-    display: none;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 1.5rem;
+  margin-bottom: 2rem;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.5rem;
 }
 
 .fieldset-details label {
-    position: relative;
-    font-size: .875rem;
+  position: relative;
+  font-size: 0.875rem;
 }
 
 label[for="heightInInch"],
 label[for="weightInLbs"] {
-    display: flex;
-    align-items: end;
+  display: flex;
+  align-items: end;
 }
 
 .fieldset-details label::after {
-    position: absolute;
-    top: 48%;
-    right: 22%;
-    color: var(--blue-600);
-    font-weight: 600;
-    font-size: 1.5rem;
+  position: absolute;
+  top: 48%;
+  right: 22%;
+  color: var(--blue-600);
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 #bmi-score {
-    display: none;
+  display: none;
 }
 
 /* Customize Number Input */
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
-    appearance: none;
+  appearance: none;
 }
 
 input[type="number"] {
-    width: 238px;
-    height: 69px;
-    padding: 1.25rem 1.5rem;
-    margin-top: .5rem;
-    display: block;
-    border: 1px solid var(--grey-300);
-    border-radius: 12px;
-    font-size: 1.5rem;
-    outline: none;
+  width: 238px;
+  height: 69px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.5rem;
+  display: block;
+  border: 1px solid var(--grey-300);
+  border-radius: 12px;
+  font-size: 1.5rem;
+  outline: none;
 }
 
 input[type="number"]:focus {
-    border-color: var(--blue-600);
+  border-color: var(--blue-600);
 }
 
 label[for="heightInCM"]::after {
-    content: "cm";
+  content: "cm";
 }
 
 label[for="weightInKG"]::after {
-    content: "kg";
+  content: "kg";
 }
 
 label[for="heightInFeet"]::after {
-    content: "ft";
+  content: "ft";
 }
 
 label[for="heightInInch"]::after {
-    content: "in";
+  content: "in";
 }
 
 label[for="weightInSt"]::after {
-    content: "st";
+  content: "st";
 }
 
 label[for="weightInLbs"]::after {
-    content: "lbs";
+  content: "lbs";
 }
-
 
 /* -------------------------------------- */
 .metric .fieldset-details__metric {
-    display: grid;
+  display: grid;
 }
 
 .imperial .fieldset-details__imperial {
-    display: grid;
+  display: grid;
 }
 
 .imperial .fieldset-details__metric {
-    display: none;
+  display: none;
 }
 
 .result-summary__container {
-    padding: 2rem;
-    background: linear-gradient(90deg, #345FF7 0%, #587DFF 100%);
-    border-radius: 1rem 10rem 10rem 1rem;
+  padding: 2rem;
+  background: linear-gradient(90deg, #345ff7 0%, #587dff 100%);
+  border-radius: 1rem 10rem 10rem 1rem;
 }
 
 .result-summary__container p,
 .result-summary__container h3,
 .result-summary__container strong {
-    color: var(--white-900);
+  color: var(--white-900);
 }
 
 .result-summary__container p {
-    font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .summary__content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #bmi-summary {
-    display: none;
+  display: none;
 }
 
 /* When Input is Filled */
 .activated {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .activated .card__heading {
-    margin-bottom: .2rem;
-    font-size: 1rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
 }
 
 .activated #bmi-score {
-    display: contents;
+  display: contents;
 }
 
 .activated #description {
-    display: none;
+  display: none;
 }
 
 .activated #bmi-summary {
-    width: 200px;
-    display: block;
+  width: 200px;
+  display: block;
 }
 
 @media (max-width: 1300px) {
-    body {
-        padding: 0;
-    }
+  body {
+    padding: 0;
+  }
 
-    .page-header__container {
-        width: 100%;
-        margin-bottom: 26rem;
-        padding-right: 0;
-    }
+  .page-header__container {
+    width: 100%;
+    margin-bottom: 26rem;
+    padding-right: 0;
+  }
 
-    .result-explanation__container {
-        width: 100%;
-        justify-content: space-around;
-    }
+  .result-explanation__container {
+    width: 100%;
+    justify-content: space-around;
+  }
 
-    .users-info {
-        left: 115px;
-        top: 75%;
-        transform: translate(0);
-    }
+  .users-info {
+    left: 115px;
+    top: 75%;
+    transform: translate(0);
+  }
 
-    .company__logo {
-        margin-bottom: 2.5rem;
-    }
+  .company__logo {
+    margin-bottom: 2.5rem;
+  }
 
-    .fieldset-unit label {
-        margin-right: 0;
-    }
+  .fieldset-unit label {
+    margin-right: 0;
+  }
 
-    label[for="imperial"] {
-        position: relative;
-        left: 29%;
-    }
+  label[for="imperial"] {
+    position: relative;
+    left: 29%;
+  }
 }
 
 @media (max-width: 960px) {
-    .page__heading {
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-    }
+  .page__heading {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .section__heading {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
+  .section__heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 
-    .page-header__container {
-        margin-bottom: 0;
-        padding: 2rem 0 0 0;
-    }
+  .page-header__container {
+    margin-bottom: 0;
+    padding: 2rem 0 0 0;
+  }
 
-    .page-header__content {
-        margin: 0 auto;
-        text-align: center;
-    }
+  .page-header__content {
+    margin: 0 auto;
+    text-align: center;
+  }
 
-    .company__logo {
-        display: block;
-    }
+  .company__logo {
+    display: block;
+  }
 
-    .users-info {
-        width: 90%;
-        position: static;
-    }
+  .users-info {
+    width: 90%;
+    position: static;
+  }
 
-    input[type="number"] {
-        width: 90%;
-    }
+  input[type="number"] {
+    width: 90%;
+  }
 
-    .company__logo,
-    .users-info {
-        margin: 2rem auto;
-    }
+  .company__logo,
+  .users-info {
+    margin: 2rem auto;
+  }
 
-    .good-habit__container {
-        margin-bottom: 2rem;
-        padding-left: 3.25rem;
-        padding-right: 3.25rem;
-        grid-template-columns: 1fr;
-        border-radius: 0;
-    }
+  .good-habit__container {
+    margin-bottom: 2rem;
+    padding-left: 3.25rem;
+    padding-right: 3.25rem;
+    grid-template-columns: 1fr;
+    border-radius: 0;
+  }
 
-    .good-habit__card {
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        justify-items: center;
-        align-items: center;
-    }
+  .good-habit__card {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    justify-items: center;
+    align-items: center;
+  }
 
-    .good-habit__logo {
-        margin-bottom: 0;
-    }
+  .good-habit__logo {
+    margin-bottom: 0;
+  }
 
-    .bmi-limitations__container {
-        padding: 2.4rem;
-    }
+  .bmi-limitations__container {
+    padding: 2.4rem;
+  }
 
-    .bmi-limitations {
-        grid-column: 1 / -1;
-        text-align: center;
-    }
+  .bmi-limitations {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
 
-    .gender {
-        grid-area: 2 / 1 / span 1 / span 6;
-    }
+  .gender {
+    grid-area: 2 / 1 / span 1 / span 6;
+  }
 
-    .age {
-        grid-area: 2 / 7 / span 1 / span 6;
-    }
+  .age {
+    grid-area: 2 / 7 / span 1 / span 6;
+  }
 
-    .muscle {
-        grid-area: 3 / 1 / span 1 / span 6;
-    }
+  .muscle {
+    grid-area: 3 / 1 / span 1 / span 6;
+  }
 
-    .pregnancy {
-        grid-area: 3 / 7 / span 1 / span 6;
-    }
+  .pregnancy {
+    grid-area: 3 / 7 / span 1 / span 6;
+  }
 
-    .race {
-        grid-area: 4 / 4 / span 1 / span 6;
-    }
+  .race {
+    grid-area: 4 / 4 / span 1 / span 6;
+  }
 }
 
 @media (max-width: 760px) {
-    .result-explanation__container {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 1rem;
-        margin-bottom: 3rem;
-    }
+  .result-explanation__container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+  }
 
-    .brand-ambassador {
-        width: 60%;
-        margin-bottom: 1rem;
-    }
+  .brand-ambassador {
+    width: 60%;
+    margin-bottom: 1rem;
+  }
 
-    .result-explanation__content {
-        width: 100%;
-        text-align: center;
-    }
+  .result-explanation__content {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 610px) {
+  .good-habit__card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
 
-    .good-habit__card {
-        grid-template-columns: 1fr;
-        justify-items: start;
-    }
+  .good-habit__logo {
+    margin-bottom: 2rem;
+  }
 
-    .good-habit__logo {
-        margin-bottom: 2rem;
-    }
+  .bmi-limitations__container {
+    padding: 1rem;
+  }
 
-    .bmi-limitations__container {
-        padding: 1rem;
-    }
+  .gender {
+    grid-area: 2 / 1 / span 1 / -1;
+  }
 
-    .gender {
-        grid-area: 2 / 1 / span 1 / -1;
-    }
+  .age {
+    grid-area: 3 / 1 / span 1 / -1;
+  }
 
-    .age {
-        grid-area: 3 / 1 / span 1 / -1;
-    }
+  .muscle {
+    grid-area: 4 / 1 / span 1 / -1;
+  }
 
-    .muscle {
-        grid-area: 4 / 1 / span 1 / -1;
-    }
+  .pregnancy {
+    grid-area: 5 / 1 / span 1 / -1;
+  }
 
-    .pregnancy {
-        grid-area: 5 / 1 / span 1 / -1;
-    }
-
-    .race {
-        grid-area: 6 / 1 / span 1 / -1;
-    }
+  .race {
+    grid-area: 6 / 1 / span 1 / -1;
+  }
 }
 
 @media (max-width: 510px) {
-    .activated {
-        flex-direction: column;
-    }
+  .activated {
+    flex-direction: column;
+  }
 
-    .result-summary__container {
-        border-radius: 1rem;
-    }
+  .result-summary__container {
+    border-radius: 1rem;
+  }
 
-    .result__content {
-        margin-bottom: 1rem;
-    }
+  .result__content {
+    margin-bottom: 1rem;
+  }
 }

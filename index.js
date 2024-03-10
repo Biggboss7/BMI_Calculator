@@ -1,114 +1,176 @@
+// Target Elements
 const bmiForm = document.querySelector(".users-info");
-const resultSummaryContainerEl = document.querySelector(".result-summary__container");
-const usersHeightCMEl = document.querySelector("#heightInCM");
-const usersWeightKGEl = document.querySelector("#weightInKG");
-const numberInputList = document.querySelectorAll("input[type='number']");
-const radioInputList = document.querySelectorAll("input[type='radio']");
 const usersBMIScoreEl = document.querySelector("#bmi-score");
 const usersBMISummary = document.querySelector("#bmi-summary");
-const minBMI = 18.5;
-const maxBMI = 24.9;
+const greetingEl = document.getElementById("greeting");
+const resultSummaryContainerEl = document.querySelector(
+  ".result-summary__container"
+);
 
-const usersInfo = {
-    heightInCM: 0,
-    weightInKG: 0,
-    heightInFeet: 0,
-    heightInInch: 0,
-    weightInSt: 0,
-    weightInLbs: 0,
-    isMetric: true,
-    calculateMetricBMI: function () {
-        const heightToMeter = this.heightInCM / 100;
-        return (this.weightInKG / Math.pow(heightToMeter, 2)).toFixed(1); // return: str
-    },
-    calculateImperialBMI: function () {
-        const totalInches = (this.heightInFeet * 12) + this.heightInInch;
-        const totalLbs = (this.weightInSt * 14) + this.weightInLbs;
-        return (totalLbs / Math.pow(totalInches, 2) * 703).toFixed(1); // return str
-    },
-    idealWeightinKG: function () {
-        const minWeight = (Math.pow(this.heightInCM / 100, 2) * minBMI).toFixed(1);
-        const maxWeight = (Math.pow(this.heightInCM / 100, 2) * maxBMI).toFixed(1);
-        return [minWeight, maxWeight]; // return: [str, ...]
-    },
-    idealWeightImperial: function () {
-        const totalMinWeight = (Math.pow(((this.heightInFeet * 12) + this.heightInInch), 2) * minBMI / 703);
-        const totalMaxWeight = (Math.pow(((this.heightInFeet * 12) + this.heightInInch), 2) * maxBMI / 703);
-        const minWeightSt = Math.floor((totalMinWeight / 14));
-        const minWeightLbs = Math.floor((totalMinWeight % 14));
-        const maxWeightSt = Math.floor((totalMaxWeight / 14));
-        const maxWeightLbs = Math.floor((totalMaxWeight % 14));
-        return [minWeightSt, minWeightLbs, maxWeightSt, maxWeightLbs];
-    },
-    resetInput: function () {
-        for (const el of numberInputList) {
-            el.value = "";
-            usersInfo[el.id] = 0;
-        }
-        document.querySelector("#greeting").innerHTML = "Welcome!";
-        resultSummaryContainerEl.classList.remove("activated");
-    }
-};
+// Input Field Target Elements
+const fieldsetDetailsEl = document.querySelector(".fieldset-details");
+const fieldsetUnitEl = document.querySelector(".fieldset-unit");
+const numberInputEl = document.querySelectorAll("input[type='number']");
 
-function bmiDescription(bmi) {
+// Configuration
+const MIN_BMI_IDEAL = 18.5;
+const MAX_BMI_IDEAL = 24.9;
+const OVER_WEIGHT_RATE = 29.9;
+const OBESE_RATE = 34.9;
+
+const BMI_IMPERIAL_MULTIPLIER = 703;
+const CM_TO_M = 100;
+const FEET_TO_INCH = 12;
+const ST_TO_LBS = 14;
+
+// Helper Function
+const cmToMeter = num => num / CM_TO_M;
+const feetToInch = num => num * FEET_TO_INCH;
+const stToLbs = num => num * ST_TO_LBS;
+
+// BMI Calculator to process User's Data
+const bmiCalculator = {
+  isMetric: true,
+
+  calculateMetricBMI() {
+    return (
+      usersInfo.weightInKG / Math.pow(cmToMeter(usersInfo.heightInCM), 2)
+    ).toFixed(1);
+  },
+
+  calculateImperialBMI() {
+    const totalInches =
+      feetToInch(usersInfo.heightInFeet) + usersInfo.heightInInch;
+
+    const totalLbs = stToLbs(usersInfo.weightInSt) + usersInfo.weightInLbs;
+
+    return (
+      (totalLbs / Math.pow(totalInches, 2)) *
+      BMI_IMPERIAL_MULTIPLIER
+    ).toFixed(1);
+  },
+
+  idealWeightinKG() {
+    const minWeight = (
+      Math.pow(cmToMeter(usersInfo.heightInCM), 2) * MIN_BMI_IDEAL
+    ).toFixed(1);
+
+    const maxWeight = (
+      Math.pow(cmToMeter(usersInfo.heightInCM), 2) * MAX_BMI_IDEAL
+    ).toFixed(1);
+
+    return [minWeight, maxWeight];
+  },
+
+  idealWeightImperial() {
+    const totalMinWeight =
+      (Math.pow(
+        feetToInch(usersInfo.heightInFeet) + usersInfo.heightInInch,
+        2
+      ) *
+        MIN_BMI_IDEAL) /
+      BMI_IMPERIAL_MULTIPLIER;
+
+    const totalMaxWeight =
+      (Math.pow(
+        feetToInch(usersInfo.heightInFeet) + usersInfo.heightInInch,
+        2
+      ) *
+        MAX_BMI_IDEAL) /
+      BMI_IMPERIAL_MULTIPLIER;
+
+    const minWeightSt = Math.floor(totalMinWeight / ST_TO_LBS);
+    const minWeightLbs = Math.floor(totalMinWeight % ST_TO_LBS);
+    const maxWeightSt = Math.floor(totalMaxWeight / ST_TO_LBS);
+    const maxWeightLbs = Math.floor(totalMaxWeight % ST_TO_LBS);
+
+    return [minWeightSt, minWeightLbs, maxWeightSt, maxWeightLbs];
+  },
+
+  resetInput() {
+    usersInfo = {
+      ...((bmiCalculator.isMetric && { heightInCM: 0, weightInKG: 0 }) || {
+        heightInFeet: 0,
+        heightInInch: 0,
+        weightInLbs: 0,
+        weightInSt: 0,
+      }),
+    };
+
+    numberInputEl.forEach(input => (input.value = ""));
+
+    greetingEl.innerHTML = "Welcome!";
+
+    resultSummaryContainerEl.classList.remove("activated");
+  },
+
+  changeDisplay(e) {
+    const lastClass = bmiForm.classList[1];
+    const chosenRadio = e.target.id;
+    bmiForm.classList.remove(lastClass);
+    bmiForm.classList.add(chosenRadio);
+  },
+
+  showBMISummary() {
+    resultSummaryContainerEl.classList.add("activated");
+    greetingEl.innerHTML = "Your BMI is ...";
+    const bmiScore = this.isMetric
+      ? this.calculateMetricBMI()
+      : this.calculateImperialBMI();
+    usersBMIScoreEl.innerHTML = bmiScore;
+    usersBMISummary.innerHTML = this.bmiDescription(Number(bmiScore));
+  },
+
+  bmiDescription(bmi) {
     let bmiStatus;
-    if (bmi < minBMI) bmiStatus = "under weight";
-    else if (bmi <= maxBMI) bmiStatus = "healthy weight";
-    else if (bmi <= 29.9) bmiStatus = "over weight";
-    else if (bmi <= 34.9) bmiStatus = "obese";
+
+    if (bmi < MIN_BMI_IDEAL) bmiStatus = "under weight";
+    else if (bmi <= MAX_BMI_IDEAL) bmiStatus = "healthy weight";
+    else if (bmi <= OVER_WEIGHT_RATE) bmiStatus = "over weight";
+    else if (bmi <= OBESE_RATE) bmiStatus = "obese";
     else bmiStatus = "extremely obese";
 
-    if (usersInfo.isMetric)
-        return `Your BMI suggests you're a <strong>${bmiStatus}</strong>. Your ideal weight is between <strong>${usersInfo.idealWeightinKG()[0]}kgs - ${usersInfo.idealWeightinKG()[1]}kgs.</strong>`;
+    if (this.isMetric)
+      return `Your BMI suggests you're a <strong>${bmiStatus}</strong>. Your ideal weight is between <strong>${
+        this.idealWeightinKG()[0]
+      }kgs - ${this.idealWeightinKG()[1]}kgs.</strong>`;
     else
-        return `Your BMI suggests you're a <strong>${bmiStatus}</strong>. Your ideal weight is between <strong>${usersInfo.idealWeightImperial()[0]}st ${usersInfo.idealWeightImperial()[1]}lbs - ${usersInfo.idealWeightImperial()[2]}st ${usersInfo.idealWeightImperial()[3]}lbs.</strong>`;
-
-}
-
-for (const element of numberInputList) {
-    element.addEventListener("focusout",
-        function (e) {
-            const whatInfo = e.target.id;
-            const infoId = `#${e.target.id}`;
-            usersInfo[whatInfo] = document.querySelector(infoId).valueAsNumber;
-            // Metric Scale
-            if (usersInfo.heightInCM && usersInfo.weightInKG) {
-                resultSummaryContainerEl.classList.add("activated");
-                const bmiScore = usersInfo.calculateMetricBMI();
-                document.querySelector("#greeting").innerHTML = "Your BMI is ...";
-                usersBMIScoreEl.innerHTML = bmiScore;
-                usersBMISummary.innerHTML = bmiDescription(Number(bmiScore));
-            };
-            // Imperial Scale
-            if (usersInfo.heightInInch && usersInfo.weightInLbs) {
-                resultSummaryContainerEl.classList.add("activated");
-                const bmiScore = usersInfo.calculateImperialBMI();
-                document.querySelector("#greeting").innerHTML = "Your BMI is ...";
-                usersBMIScoreEl.innerHTML = bmiScore;
-                usersBMISummary.innerHTML = bmiDescription(Number(bmiScore));
-            };
-        }
-    );
+      return `Your BMI suggests you're a <strong>${bmiStatus}</strong>. Your ideal weight is between <strong>${
+        this.idealWeightImperial()[0]
+      }st ${this.idealWeightImperial()[1]}lbs - ${
+        this.idealWeightImperial()[2]
+      }st ${this.idealWeightImperial()[3]}lbs.</strong>`;
+  },
 };
 
-for (const radio of radioInputList) {
-    radio.addEventListener("click",
-        function (e) {
-            const lastClass = bmiForm.classList[1];
-            const chosenRadio = e.target.id;
-            chosenRadio === "metric" ? usersInfo.isMetric = true : usersInfo.isMetric = false;
-            if (chosenRadio !== lastClass) {
-                bmiForm.classList.remove(lastClass);
-                bmiForm.classList.add(chosenRadio);
-                usersInfo.resetInput();
-            }
-        })
-}
+// User Data to be processed
+let usersInfo = {
+  ...((bmiCalculator.isMetric && { heightInCM: 0, weightInKG: 0 }) || {
+    heightInFeet: 0,
+    heightInInch: 0,
+    weightInLbs: 0,
+    weightInSt: 0,
+  }),
+};
 
+// Event Delegations
+fieldsetDetailsEl.addEventListener("focusout", function (e) {
+  const entry = e.target;
 
+  // Manipulate User's Data
+  usersInfo[entry.id] = entry.valueAsNumber;
 
+  if (
+    (usersInfo.heightInCM && usersInfo.weightInKG) ||
+    (usersInfo.heightInInch && usersInfo.weightInLbs)
+  )
+    bmiCalculator.showBMISummary();
+});
 
+fieldsetUnitEl.addEventListener("change", function (e) {
+  bmiCalculator.changeDisplay(e);
 
+  bmiCalculator.isMetric = !bmiCalculator.isMetric;
 
-
-
+  bmiCalculator.resetInput();
+});
